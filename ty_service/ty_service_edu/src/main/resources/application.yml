@@ -1,0 +1,25 @@
+# 服务端口
+server:
+  port: 8001
+spring:
+  application:
+    # 服务名
+    name: ty-service-edu
+  profiles:
+    # 环境设置：dev、test、prod
+    active: dev
+  # mysql数据库连接
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    #
+    url: jdbc:mysql://localhost:3306/ty_edu?serverTimezone=GMT%2B8
+    username: root
+    password: 123456
+  #返回json的全局时间格式
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+#mybatis日志
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
