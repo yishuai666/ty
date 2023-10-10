@@ -15,6 +15,11 @@
         <module>ty_service_edu</module>
         <module>ty_service_vod</module>
         <module>ty_service_oss</module>
+        <module>ty_service_acl</module>
+        <module>ty_service_cms</module>
+        <module>ty_service_ucenter</module>
+        <module>ty_service_msm</module>
+        <module>ty_service_order</module>
     </modules>
 
     <properties>

@@ -4,7 +4,7 @@ server:
   #服务名
 spring:
   application:
-    name: service-oss
+    name: ty-service-oss
   
   #环境设置：dev、test、prod
   profiles:
