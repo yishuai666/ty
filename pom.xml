@@ -14,6 +14,10 @@
     <modules>
         <module>ty_service</module>
         <module>ty_common</module>
+        <module>ty_canal_clientedu</module>
+        <module>ty_service/ty_service_statistics</module>
+        <module>ty_common/ty_spring_security</module>
+        <module>ty_infrastructure</module>
     </modules>
     <version>0.0.1-SNAPSHOT</version>
     <name>ty_parent</name>

@@ -11,5 +11,15 @@
 
     <artifactId>ty_service_acl</artifactId>
 
-
+    <dependencies>
+        <dependency>
+            <groupId>com.ty</groupId>
+            <artifactId>ty_spring_security</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+        </dependency>
+    </dependencies>
 </project>

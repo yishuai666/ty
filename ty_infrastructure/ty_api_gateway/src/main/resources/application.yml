@@ -1,0 +1,80 @@
+# 服务端口
+server:
+  port: 8222
+  # 服务名
+spring:
+  application:
+    name: ty-service-gateway
+  # nacos服务地址
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+  
+    #使用服务发现路由
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+  
+      #设置路由id
+      #配置service-acl服务
+      routes[0]:
+        id: ty-service-acl
+        #设置路由的uri   lb://nacos注册服务名称
+        uri: lb://ty-service-acl
+        #设置路由断言,代理servicerId为auth-service的/auth/路径
+        predicates:  Path=/*/acl/**
+  
+      #配置service-edu服务
+      routes[1]:
+        id: ty-service-edu
+        uri: lb://ty-service-edu
+        predicates:  Path=/eduservice/**
+  
+      #配置service-msm服务
+      routes[2]:
+        id: ty-service-msm
+        uri: lb://ty-service-msm
+        predicates:  Path=/edumsm/**
+
+      #配置service-ucenter服务
+      routes[3]:
+        id: ty-service-ucenter
+        uri: lb://ty-service-ucenter
+        predicates:  Path=/educenter/**
+
+
+      #配置service-statistics服务
+      routes[4]:
+        id: ty-service-statistics
+        uri: lb://ty-service-statistics
+        predicates:  Path=/staservice/**
+
+      #配置service-vod服务
+      routes[5]:
+        id: ty-service-vod
+        uri: lb://ty-service-vod
+        predicates: Path=/eduvod/**
+
+      #配置service-oss服务
+      routes[6]:
+        id: ty-service-oss
+        uri: lb://ty-service-oss
+        predicates: Path=/eduoss/**
+
+      #配置service-order服务
+      routes[7]:
+        id: ty-service-order
+        uri: lb://ty-service-order
+        predicates: Path=/eduorder/**
+
+      #配置service-cms服务
+      routes[8]:
+        id: ty-service-cms
+        uri: lb://ty-service-cms
+        predicates: Path=/educms/**
+
+
+  main:
+    allow-bean-definition-overriding: true
